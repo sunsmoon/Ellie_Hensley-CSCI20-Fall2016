@@ -43,6 +43,7 @@ int main()
     
     // Print the results to the user!
     
+    cout.precision(4); // Limits the cout to 4 digits (XX.XX)
     cout << endl;
     cout << "You deposited $" << money_in / 100 << ". It broke down as follows: " << endl;
     cout << num_quarters << " quarters, " << num_dimes << " dimes, " << num_nickels << " nickels, " << num_pennies << " pennies." << endl;
