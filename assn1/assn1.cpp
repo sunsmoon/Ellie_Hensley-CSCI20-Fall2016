@@ -46,6 +46,6 @@ int main()
     
     cout << endl;
     cout << employee_name << " worked " << hours_worked << " hours at a rate of $" << wage << " per hour." << endl;
-    cout << employee_name << " earned $" << gross_income << " before taxes (" << tax_rate << "%)." << endl;
+    cout << fixed << setprecision(2) << employee_name << " earned $" << gross_income << " before taxes (" << tax_rate << "%)." << endl;
     cout << fixed << setprecision(2) << "After taxes, " << employee_name << " will recieve $" << net_income << " in take-home pay.";
 }
