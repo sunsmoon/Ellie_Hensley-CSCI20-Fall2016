@@ -12,6 +12,14 @@ Changes:
 - Added iomanip to includes.
 - changed display of numbers (always with 2 digits after decimal).
 - Added $ (unit) to input prompt.
+
+Help/Credits: 
+
+Used the kind souls at stackoverflow to improve display of numbers.
+   see: http://stackoverflow.com/questions/16280069/show-two-digits-after-decimal-point-in-c
+
+Stackoverflow also helped me figure out how to accept input that included spaces.
+   see: http://stackoverflow.com/questions/2765462/how-to-cin-space-in-c
 */
 
 #include <iostream>
