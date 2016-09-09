@@ -7,9 +7,15 @@ It then computes the amount of money before and after taxes that the employee wi
 Finally, it outputs the results (including the original inputs).
 
 It can be modified to make the tax rate an input.
+
+Changes:
+- Added iomanip to includes.
+- changed display of numbers (always with 2 digits after decimal).
+- Added $ (unit) to input prompt.
 */
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main()
@@ -22,7 +28,7 @@ int main()
     getline (cin, employee_name);
     cout << "How many hours has the employee worked this pay period? ";
     cin >> hours_worked;
-    cout << "What is the hourly pay rate for the employee? ";
+    cout << "What is the hourly pay rate for the employee? $";
     cin >> wage;
     
     float tax_rate = 17.00;
@@ -33,5 +39,5 @@ int main()
     cout << endl;
     cout << employee_name << " worked " << hours_worked << " hours at a rate of $" << wage << " per hour." << endl;
     cout << employee_name << " earned $" << gross_income << " before taxes (" << tax_rate << "%)." << endl;
-    cout << "After taxes, " << employee_name << " will recieve $" << net_income << " in take-home pay.";
+    cout << fixed << setprecision(2) << "After taxes, " << employee_name << " will recieve $" << net_income << " in take-home pay.";
 }
