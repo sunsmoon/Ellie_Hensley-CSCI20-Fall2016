@@ -1,16 +1,11 @@
-// Lab 6: Copyright © Function.
+// Lab 1: Ascii Art.
 // This program outputs ascii art of Eevee, my favorite pokemon
-// followed by a Copyright statement.
 // Ellie Hensley
 // 9-13-16
 // Ascii Eevee courtesy of: http://www.fiikus.net/?pokedex
 
 #include <iostream>
 using namespace std;
-
-void copyright(string name, int year) {
-    cout << "Copyright © " << name << " " << year << endl; 
-}
 
 int main()
 {
@@ -50,6 +45,4 @@ int main()
     cout << "                                   |   ,\'" << endl;
     cout << "                                    `\"\"" << endl;
     cout << endl;
-    
-    copyright("Ellie Hensley", 2016);
 }
