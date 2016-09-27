@@ -1,4 +1,10 @@
 /*
+Lab 9: Classes & Objects
+
+This program converts to and from Celsius, Fahrenheit, and Kelvin, then prints out the different values.
+
+by Ellie Hensley
+9-25-16
 
 */
 
@@ -61,6 +67,13 @@ void TemperatureConverter::SetTempFromKelvin(double kelvin)
     kelvin_ = kelvin;
 }
 
+// GetTempFromKelvin():
+// "Reads" the value stored in kelvin_
+double TemperatureConverter::GetTempFromKelvin() const
+{
+    return kelvin_;
+}
+
 // GetTempAsCelsius():
 // Converts a temperature from Kelvin to Celsius
 // and returns it.
@@ -82,40 +95,28 @@ double TemperatureConverter::GetTempAsFahrenheit() const
 // in Kelvin, Celsius, Fahrenheit.
 string TemperatureConverter::PrintTemperatures()
 {
-    cout << kelvin_ << " K is: " << endl;
-    cout << GetTempAsFahrenheit() << " F" << endl;
-    cout << GetTempAsCelsius() << " C" << endl;
+    cout << kelvin_ << " K is the same as " << GetTempAsFahrenheit() << " F and " <<  GetTempAsCelsius() << " C." << endl << endl;
 }
 
-int main() {
+int main ()
+{
+    TemperatureConverter temp1; //testing default constructor
+    TemperatureConverter temp2(274); //testing overloaded constructor
     
-    TemperatureConverter temp_conversion;
+    temp1.PrintTemperatures();
+    temp2.PrintTemperatures();
     
-    char temperature_type;     // Used with the IF/ELSE IF statements to determine what our original input temperature is.
-    double temperature_input;
+    temp1.SetTempFromKelvin(400.15); //testing mutator function
+    cout << temp1.GetTempFromKelvin() << endl; //testing accessor function
+    temp1.PrintTemperatures();
     
-    cout << "Is the original temperature in Celsius (C), Fahrenheit (F), or Kelvin (K)? (C, F, or K) ";
-    cin >> temperature_type;
+    temp2.SetTempFromCelsius(32); //testing other functions
+    cout << temp2.GetTempAsCelsius() << endl;
+    temp2.PrintTemperatures();
     
-    if (temperature_type == 'C' || temperature_type == 'c')               // Checks if user wants Celsius input
-    {
-        cout << "What is the temperature (in Celsius)? "; 
-        cin >> temperature_input;
-        temp_conversion.SetTempFromCelsius(temperature_input);     // Convert to Kelvin & store the input.
-    }
-    else if (temperature_type == 'F' || temperature_type == 'f')          // Checks if user wants Fahrenheit input
-    {
-        cout << "What is the temperature (in Fahrenheit)? "; 
-        cin >> temperature_input;
-        temp_conversion.SetTempFromFahrenheit(temperature_input);  // Convert to Kelvin & store the input.
-    }
-    else                                                    // Default (Kelvin) input
-    {
-        cout << "What is the temperature (in Kelvin)? ";
-        cin >> temperature_input;
-        temp_conversion.SetTempFromKelvin(temperature_input);      // Store the input.
-    }
+    temp2.SetTempFromFahrenheit(32);
+    cout << temp2.GetTempAsFahrenheit() << endl;
+    temp2.PrintTemperatures();
     
-    cout << endl;
-    temp_conversion.PrintTemperatures();                    // Print the results.
+    return 0;
 }
