@@ -54,11 +54,12 @@ double weight_in_space::calculate_weight(double gravity) {
 // PrintWeightCalcs()
 // Outputs the weight of the user on various planets.
 void weight_in_space::PrintWeightCalcs() {
-    cout << endl << "Your weight on Earth is " << weight << " lbs." << endl << endl;
+    cout << endl << endl;
     
     cout << "Your weight on the other planets is: " << endl;
     cout << "Mercury: " << calculate_weight(0.38) << " lbs." << endl;
     cout << "Venus: " << calculate_weight(0.91) << " lbs." << endl;
+    cout << "Moon: " << calculate_weight(0.866) << " lbs." << endl;
     cout << "Mars: " << calculate_weight(1.03) << " lbs." << endl;
     cout << "Jupiter: " << calculate_weight(0.41) << " lbs." << endl;
     cout << "Saturn: " << calculate_weight(0.43) << " lbs." << endl;
