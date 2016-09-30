@@ -54,7 +54,7 @@ double weight_in_space::calculate_weight(double gravity) {
 // PrintWeightCalcs()
 // Outputs the weight of the user on various planets.
 void weight_in_space::PrintWeightCalcs() {
-    cout << "Your weight on Earth is " << weight << " lbs." << endl << endl;
+    cout << endl << "Your weight on Earth is " << weight << " lbs." << endl << endl;
     
     cout << "Your weight on the other planets is: " << endl;
     cout << "Mercury: " << calculate_weight(0.38) << " lbs." << endl;
@@ -67,15 +67,12 @@ void weight_in_space::PrintWeightCalcs() {
 }
 
 int main() {
-    weight_in_space MyWeight;
-    
     double user_weight;
     
     cout << "What is your weight on Earth (in lbs)? ";
     cin >> user_weight;
-    cout << endl;
     
-    MyWeight.SetWeight(user_weight);
+    weight_in_space MyWeight(user_weight);
     
     MyWeight.PrintWeightCalcs();
 }
