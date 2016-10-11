@@ -52,7 +52,5 @@ int main(){
                 else {                                              // User doesn't like to swim.
                     cout << "You are a cat!";
                 }
-            }
-            break;
-    }
+        }
 }
