@@ -114,19 +114,8 @@ int main() {
             
             // Asking the player to pick which pile of stones to remove from.
             while (!(player_stonePile == 'a' || player_stonePile == 'A' || player_stonePile == 'b' || player_stonePile == 'B')) {
-            
-                if (Game.GetNumStonesA() == 0) {
-                    player_stonePile = 'b';
-                    cout << "Pile B has been automatically selected because pile A is empty." << endl;
-                }
-                else if (Game.GetNumStonesB() == 0) {
-                    player_stonePile = 'a';
-                    cout << "Pile A has been automatically selected because Pile B is empty." << endl;
-                }
-                else {
-                    cout << "Which pile would you like to remove stones from? (a or b) ";
-                    cin >> player_stonePile;
-                }
+                cout << "Which pile would you like to remove stones from? (a or b) ";
+                cin >> player_stonePile;
             }
 
             // Making sure the player input is valid (must be between 1 and 3, or numStones if numStones is less than 3.)
@@ -234,15 +223,23 @@ int main() {
             player_stonePile = 'n';
             
             if (computer_numStones == 1) {
-                cout << "The computer removed " << computer_numStones << " stone from pile " << computer_stonePile << endl;
+                cout << "The computer removed " << computer_numStones << " stone from pile " << computer_stonePile << "." << endl;
             }
             else {
-                cout << "The computer removed " << computer_numStones << " stones from pile " << computer_stonePile << endl;
+                cout << "The computer removed " << computer_numStones << " stones from pile " << computer_stonePile << "." << endl;
             }
 
             Game.IncrementTurnCounter();
             
         }
     }
+ 
+    cout << endl;
     
+    if (Game.GetPlayerTurn() == 1) {
+        cout << "You won!" << endl;
+    }
+    else {
+        cout << "The Computer Won!" << endl;
+    }
 }
