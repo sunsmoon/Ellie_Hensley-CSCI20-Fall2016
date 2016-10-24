@@ -7,10 +7,13 @@ by Ellie Hensley
 This game is run using loops, a class, and lots of user input! 
 The objective is to be the person to reduce the number of stones to 0.
 
-Known Issue: Lines 133-166 : Using a letter instead of a number for the number of stones to remove causes it to repeat forever. Not sure how to fix.
+3 lines of code borrowed from user Greyfade at Stackoverflow. http://stackoverflow.com/a/5655685
+Those snips of code are comment-tagged with his/her username.
 */
 
 #include <iostream>
+#include <sstream>
+#include <limits>
 using namespace std;
 
 class GameOfNim {
@@ -118,18 +121,23 @@ int main() {
                 cin >> player_stonePile;
             }
 
-            // Making sure the player input is valid (must be between 1 and 3, or numStones if numStones is less than 3.)
-            // FIXME: Known issue - inputting a letter for the # of stones to remove causes it to repeat forever. A large number doesn't.
+            // Making sure the player input is valid (must be between 1 and 3, or numStonesA/numStonesB if they are less than 3.)
             if (player_stonePile == 'a' || player_stonePile == 'A') {
                 
                 while (player_numStones < 1 || player_numStones > Game.GetNumStonesA() || player_numStones > 3) {
                 
+                    // Fixes the infinite loop caused by using a letter instead of a number. Courtesy of user Greyfade at Stackoverflow. http://stackoverflow.com/a/5655685
+                    if (cin.fail()) {
+                        cin.clear(); 
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    }
+                
                     // Switch the input prompt depending on the number of stones left.
                     if (Game.GetNumStonesA() < 3) {
-                        cout << "Pick a number between 1 and " << Game.GetNumStonesA() << ". ";
+                        cout << "How many stones would you like to remove from? (between 1 and " << Game.GetNumStonesA() << ") ";
                     }
                     else {
-                        cout << "Pick a number between 1 and 3. ";
+                        cout << "How many stones would you like to remove? (between 1 and 3) ";
                     }
                     
                     cin >> player_numStones;
@@ -140,13 +148,19 @@ int main() {
             else if (player_stonePile == 'b' || player_stonePile == 'B') {
                 
                 while (player_numStones < 1 || player_numStones > Game.GetNumStonesB() || player_numStones > 3) {
-                
+                    
+                    // Fixes the infinite loop caused by using a letter instead of a number. Courtesy of user Greyfade at Stackoverflow. http://stackoverflow.com/a/5655685
+                    if (cin.fail()) {
+                        cin.clear(); 
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    }
+                    
                     // Switch the input prompt depending on the number of stones left.
                     if (Game.GetNumStonesB() < 3) {
-                        cout << "Pick a number between 1 and " << Game.GetNumStonesB() << ". ";
+                        cout << "How many stones would you like to remove from? (between 1 and " << Game.GetNumStonesB() << ") ";
                     }
                     else {
-                        cout << "Pick a number between 1 and 3. ";
+                        cout << "How many stones would you like to remove? (between 1 and 3) ";
                     }
                     cin >> player_numStones;
                 }
