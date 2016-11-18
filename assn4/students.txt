@@ -1,0 +1,6 @@
+Christian Smith ? d b a c d ? b b a ? ? ? f f t ? ? var ? equation
+Paxton Jones d a d c d d ? a a ? t f f f ? t ? f variable ? expression
+Abby Sciuto d a d d ? c ? d d d f ? ? t f f f f variable ? ?
+Audrey Smithson c b a b a ? b c c c f ? ? f t f ? ? ? ? ?
+Katie Holmes d ? ? d ? ? ? c a d f f t f t t t ? var rand() condition
+Carrie Grant d ? b c c a d ? b b  ? t t t f f t t  variable random condition
